@@ -11,10 +11,13 @@ body {
 
 /* Simple layout helpers (since Bootstrap is not loaded) */
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 16px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding-left: 5px;
+  padding-right: 10px;
 }
+
 
 .row {
   width: 100%;
@@ -39,12 +42,21 @@ body {
   padding: 16px 0;
 }
 
+
 /* main nav bar */
+/* Center the header content */
+.header-area .container {
+  width: 100%;
+}
+
+/* Main nav centered within the container */
 .main-nav {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 
 /* LOGO IMAGE + TEXT */
 .logo {
@@ -93,7 +105,7 @@ body {
 /* CONTACT BUTTON */
 
 .main-red-button a {
-  background: #ff4d4d;
+  background: #9f262d;
   padding: 10px 20px;
   border-radius: 40px;
   color: #fff !important;
@@ -103,7 +115,7 @@ body {
 }
 
 .main-red-button a:hover {
-  background: #ff3333;
+  background:#9f262d;
 }
 
 /* MENU TRIGGER (MOBILE BUTTON) */
@@ -123,8 +135,9 @@ body {
   border-radius: 5px;
 }
 
-
-
+.menu-trigger span {
+  font-size: 16px;
+}
 
 /* ===========================
    RESPONSIVE
@@ -132,9 +145,6 @@ body {
 
 @media (max-width: 768px) {
 
-  .logo h3 {
-    display: none;
-  }
   .main-nav {
     flex-wrap: wrap;
   }
@@ -147,9 +157,6 @@ body {
   .main-nav .nav li a {
     display: block;
   }
-  .menu-trigger.hide {
-  display: none !important;
-}
 
 }
 @media (max-width: 768px) {
@@ -171,7 +178,4 @@ body {
   .main-nav .nav.show {
     display: flex;
   }
-
 }
-
-
