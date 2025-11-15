@@ -1,3 +1,29 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Simple layout helpers (since Bootstrap is not loaded) */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.row {
+  width: 100%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
 /* ===========================
    HEADER STYLING
 =========================== */
@@ -10,44 +36,50 @@
   width: 100%;
   z-index: 9999;
   box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-  padding: 20px 0;
+  padding: 16px 0;
 }
 
-.header-area .logo h3 {
-  font-size: 28px;
-  font-weight: 700;
-  margin: 0;
-  letter-spacing: 1px;
-}
-
-.header-area .logo h3 span {
-  color: #9f262d ;  /* RED for DYNA */
-}
-
-.header-area .logo h3 {
-  color: #9f262d ; /* BLUE for SPAC */
-}
-
-/* NAVIGATION */
-
-
+/* main nav bar */
 .main-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* LOGO IMAGE + TEXT */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 45px;   /* adjust logo size if needed */
+  width: auto;
+  display: block;
+}
+
+.logo h3 {
+  color: #9f262d;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* NAVIGATION LINKS */
+
 .main-nav .nav {
   list-style: none;
   display: flex;
-  gap: 35px;
+  gap: 30px;
   align-items: center;
   margin: 0;
 }
 
 .main-nav .nav li a {
   text-decoration: none;
-  font-size: 16px;
+  font-size: 15px;
   color: #222222;
   font-weight: 500;
   transition: all 0.3s;
@@ -55,14 +87,14 @@
 
 .main-nav .nav li a:hover,
 .main-nav .nav li a.active {
-  color: #9f262d ; /* Active red color */
+  color: #9f262d;
 }
 
-/* CONTACT NOW BUTTON */
+/* CONTACT BUTTON */
 
 .main-red-button a {
   background: #ff4d4d;
-  padding: 12px 25px;
+  padding: 10px 20px;
   border-radius: 40px;
   color: #fff !important;
   font-weight: 600;
@@ -74,75 +106,58 @@
   background: #ff3333;
 }
 
-/* menu trigger for mobile (hamburger) */
+/* MENU TRIGGER (MOBILE BUTTON) */
+
 .menu-trigger {
   display: none;
   cursor: pointer;
   padding: 8px 15px;
   border-radius: 5px;
   background: #eee;
+  margin-left: 16px;
+  user-select: none;
 }
 
 .menu-trigger span {
   font-size: 16px;
 }
 
-/* LOGO IMAGE + TEXT */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 15px; /* space between image and text */
-  text-decoration: none;
-}
-
-.logo img {
-  height: 45px;   /* adjust logo size */
-  width: auto;
-  display: block;
-}
-
-/* Text colors */
-.logo h3 {
-  color: #9f262d ;  /* blue for SPAC */
-  font-size: 26px;
-  font-weight: 700;
-  margin: 0;
-}
-
-
-
 /* ===========================
    RESPONSIVE
 =========================== */
 
 @media (max-width: 768px) {
+
   .main-nav {
-    position: relative;
+    flex-wrap: wrap;
   }
 
+  /* show only logo + menu button in top row */
   .main-nav .nav {
-    display: none;                 /* hidden by default */
+    display: none;
     flex-direction: column;
-    position: absolute;
-    right: 0;
-    top: 70px;                     /* just below header */
+    width: 100%;
+    margin-top: 12px;
     background: #ffffff;
-    padding: 15px 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    gap: 15px;
+    padding: 10px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   }
 
-  /* when we add .show via JS, menu becomes visible */
+  .main-nav .nav li {
+    width: 100%;
+    padding: 6px 16px;
+  }
+
+  .main-nav .nav li a {
+    display: block;
+  }
+
+  /* when JS toggles .show */
   .main-nav .nav.show {
     display: flex;
   }
 
   .menu-trigger {
     display: block;
-    cursor: pointer;
-    padding: 8px 15px;
-    border-radius: 5px;
-    background: #eee;
-    margin-left: auto;
   }
 }
