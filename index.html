@@ -37,29 +37,33 @@
       </div>
     </div>
   </header>
- <script>
+<script>
 document.addEventListener('DOMContentLoaded', function () {
   const menuTrigger = document.querySelector('.menu-trigger');
   const nav = document.querySelector('.main-nav .nav');
 
-  // open/close on hamburger click
+  // OPEN MENU ON CLICK
   menuTrigger.addEventListener('click', function (event) {
     event.stopPropagation();
-    nav.classList.toggle('show');
+    nav.classList.add('show');
+    menuTrigger.classList.add('hide');  // hide icon
   });
 
-  // close menu when clicking anywhere outside
+  // CLOSE MENU WHEN CLICK OUTSIDE
   document.addEventListener('click', function (event) {
-    if (!nav.contains(event.target) && !menuTrigger.contains(event.target)) {
+    if (!nav.contains(event.target)) {
       nav.classList.remove('show');
+      menuTrigger.classList.remove('hide'); // show icon again
     }
   });
 });
 </script>
 
 
+
     
 </body>
 
 </html>
+
 
