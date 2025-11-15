@@ -37,20 +37,29 @@
       </div>
     </div>
   </header>
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const menuTrigger = document.querySelector('.menu-trigger');
-    const nav = document.querySelector('.main-nav .nav');
+ <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const menuTrigger = document.querySelector('.menu-trigger');
+  const nav = document.querySelector('.main-nav .nav');
 
-    if (menuTrigger && nav) {
-      menuTrigger.addEventListener('click', function () {
-        nav.classList.toggle('show');
-      });
+  // open/close on hamburger click
+  menuTrigger.addEventListener('click', function (event) {
+    event.stopPropagation();
+    nav.classList.toggle('show');
+  });
+
+  // close menu when clicking anywhere outside
+  document.addEventListener('click', function (event) {
+    if (!nav.contains(event.target) && !menuTrigger.contains(event.target)) {
+      nav.classList.remove('show');
     }
   });
+});
 </script>
+
 
     
 </body>
 
 </html>
+
