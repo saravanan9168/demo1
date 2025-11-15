@@ -138,12 +138,21 @@ body {
 .menu-trigger span {
   font-size: 16px;
 }
+/* hide hamburger icon when menu is active */
+.menu-trigger.hide {
+  display: none !important;
+}
+
 
 /* ===========================
    RESPONSIVE
 =========================== */
 
 @media (max-width: 768px) {
+  .logo h3 {
+    display: none;
+  }
+
 
   .main-nav {
     flex-wrap: wrap;
