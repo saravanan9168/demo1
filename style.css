@@ -133,6 +133,9 @@ body {
 
 @media (max-width: 768px) {
 
+  .logo h3 {
+    display: none;
+  }
   .main-nav {
     flex-wrap: wrap;
   }
@@ -166,4 +169,5 @@ body {
   .main-nav .nav.show {
     display: flex;
   }
+
 }
