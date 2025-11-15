@@ -1,0 +1,125 @@
+/* ===========================
+   HEADER STYLING
+=========================== */
+
+.header-area {
+  background: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+  padding: 20px 0;
+}
+
+.header-area .logo h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.header-area .logo h3 span {
+  color: #9f262d ;  /* RED for DYNA */
+}
+
+.header-area .logo h3 {
+  color: #9f262d ; /* BLUE for SPAC */
+}
+
+/* NAVIGATION */
+
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav .nav {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  align-items: center;
+  margin: 0;
+}
+
+.main-nav .nav li a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #222222;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.main-nav .nav li a:hover,
+.main-nav .nav li a.active {
+  color: #9f262d ; /* Active red color */
+}
+
+/* CONTACT NOW BUTTON */
+
+.main-red-button a {
+  background: #ff4d4d;
+  padding: 12px 25px;
+  border-radius: 40px;
+  color: #fff !important;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.main-red-button a:hover {
+  background: #ff3333;
+}
+
+/* menu trigger for mobile (hamburger) */
+.menu-trigger {
+  display: none;
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 5px;
+  background: #eee;
+}
+
+.menu-trigger span {
+  font-size: 16px;
+}
+
+/* LOGO IMAGE + TEXT */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* space between image and text */
+  text-decoration: none;
+}
+
+.logo img {
+  height: 45px;   /* adjust logo size */
+  width: auto;
+  display: block;
+}
+
+/* Text colors */
+.logo h3 {
+  color: #9f262d ;  /* blue for SPAC */
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0;
+}
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width: 768px) {
+  .main-nav .nav {
+    display: none;
+  }
+
+  .menu-trigger {
+    display: block;
+  }
+}
