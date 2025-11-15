@@ -147,6 +147,9 @@ body {
   .main-nav .nav li a {
     display: block;
   }
+  .menu-trigger.hide {
+  display: none !important;
+}
 
 }
 @media (max-width: 768px) {
@@ -170,4 +173,5 @@ body {
   }
 
 }
+
 
