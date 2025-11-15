@@ -110,12 +110,17 @@ body {
 
 .menu-trigger {
   display: none;
+  flex-direction: column;
+  gap: 5px;
   cursor: pointer;
-  padding: 8px 15px;
+  padding: 5px;
+}
+
+.menu-trigger .bar {
+  width: 28px;
+  height: 3px;
+  background: #222;
   border-radius: 5px;
-  background: #eee;
-  margin-left: 16px;
-  user-select: none;
 }
 
 .menu-trigger span {
@@ -132,17 +137,6 @@ body {
     flex-wrap: wrap;
   }
 
-  /* show only logo + menu button in top row */
-  .main-nav .nav {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 12px;
-    background: #ffffff;
-    padding: 10px 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  }
-
   .main-nav .nav li {
     width: 100%;
     padding: 6px 16px;
@@ -152,12 +146,24 @@ body {
     display: block;
   }
 
-  /* when JS toggles .show */
-  .main-nav .nav.show {
+}
+@media (max-width: 768px) {
+
+  .menu-trigger {
     display: flex;
   }
 
-  .menu-trigger {
-    display: block;
+  .main-nav .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin-top: 10px;
+    padding: 15px 0;
+  }
+
+  .main-nav .nav.show {
+    display: flex;
   }
 }
