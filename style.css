@@ -110,16 +110,39 @@
 }
 
 
+
 /* ===========================
    RESPONSIVE
 =========================== */
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
+  .main-nav {
+    position: relative;
+  }
+
   .main-nav .nav {
-    display: none;
+    display: none;                 /* hidden by default */
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 70px;                     /* just below header */
+    background: #ffffff;
+    padding: 15px 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    gap: 15px;
+  }
+
+  /* when we add .show via JS, menu becomes visible */
+  .main-nav .nav.show {
+    display: flex;
   }
 
   .menu-trigger {
     display: block;
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background: #eee;
+    margin-left: auto;
   }
 }
